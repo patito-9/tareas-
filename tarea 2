@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define MAX 11
+int es_arreglo_espejo(int arr[], int n) {
+    for (int i = 0; i < n / 2; i++) {
+        if (arr[i] != arr[n - 1 - i]) {
+            return 0;
+        }
+    }
+    return 1; 
+}
+
+int main() {
+    int vector[MAX];
+    
+    printf("Ingrese los %d elementos del arreglo:\n", MAX);
+    for (int i = 0; i < MAX; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%d", &vector[i]);
+    }
+
+    if (es_arreglo_espejo(vector, MAX)) {
+        printf("El arreglo es un arreglo espejo.\n");
+    } else {
+        printf("El arreglo no es un arreglo espejo.\n");
+    }
+
+    return 0;
+}
