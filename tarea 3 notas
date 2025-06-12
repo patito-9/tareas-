@@ -1,0 +1,48 @@
+#include <stdio.h>
+int main() {
+    float nota1, nota2, nota3, promedio;
+    char gradoLetra;
+
+    do {
+        printf("Ingrese la nota 1 (entre 0 y 100): ");
+        scanf("%f", &nota1);
+        if (nota1 < 0 || nota1 > 100) {
+            printf("Error: La nota debe estar entre 0 y 100. Intente de nuevo.\n");
+        }
+    } while (nota1 < 0 || nota1 >100);
+
+    do {
+        printf("Ingrese la nota 2 (entre 0 y 100): ");
+        scanf("%f", &nota2);
+        if (nota2 < 0 || nota2 > 100) {
+            printf("Error: La nota debe estar entre 0 y 100. Intente de nuevo.\n");
+        }
+    } while (nota2 < 0 || nota2 > 100);
+
+    do {
+        printf("Ingrese la nota 3 (entre 0 y 100): ");
+        scanf("%f", &nota3);
+        if (nota3 < 0 || nota3 > 100) {
+            printf("Error: La nota debe estar entre 0 y 100. Intente de nuevo.\n");
+        }
+    } while(nota3 < 0 || nota3 > 100);
+
+    promedio=(nota1+nota2+nota3) / 3.0;
+
+    if (promedio>=90) {
+        gradoLetra='A';
+    } else if (promedio>=80) {
+        gradoLetra='B';
+    } else if (promedio>=70) {
+        gradoLetra='C';
+    } else if (promedio>=60) {
+        gradoLetra='D';
+    } else {
+        gradoLetra='F';
+    }
+
+    printf("\nEl promedio de las 3 notas es: %.2f\n", promedio);
+    printf("El grado de letra equivalente es: %c\n", gradoLetra);
+
+    return 0;
+}
